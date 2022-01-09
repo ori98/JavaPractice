@@ -13,13 +13,13 @@ public class Exercise1 {
         );
 		
 		System.out.println("Unsorted");
-		printConditionally(people, person -> true);
+		performConditionally(people, person -> true, person -> System.out.println(person));
 		
 		// Q1: sort list by last name
 		
 		Collections.sort(people, (p1, p2)-> p1.getLastName().compareTo(p2.getLastName()));
 		System.out.println("Sort by last name:");
-		printConditionally(people, person -> true);
+		performConditionally(people, person -> true, person -> System.out.println(person));
 		// Q2: Create a method that prints all elements in the list
 		
 		System.out.println("Print all elements:");
@@ -32,12 +32,12 @@ public class Exercise1 {
 		
 		// more flexible way is
 		// defining a method with a behavior using condition interface
-		printConditionally(people, p -> p.getLastName().startsWith("C"));
+		performConditionally(people, p -> p.getLastName().startsWith("C"), p -> System.out.println(p));
 	}
 	
 	// defining method for Q3
-	static void printConditionally(List<Person> people, Predicate<Person> predicate) {
-		people.forEach(person->{if(predicate.test(person)) System.out.println(person);});
+	static void performConditionally(List<Person> people, Predicate<Person> predicate, Consumer<Person> consumer) {
+		people.forEach(person->{if(predicate.test(person)) consumer.accept(person);});
 	}
 }
 
