@@ -1,0 +1,6 @@
+The given problem consists of the people class and we are supposed to
+perform three tasts:
+1. Sort the list of people on the basis of their last names
+2. Display all the list of people
+3. Conditionally display the names of the people who have C in their last name 
+* usage of lamda functions has been made here
