@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 
 public class Exercise1 {
 	
@@ -35,13 +36,8 @@ public class Exercise1 {
 	}
 	
 	// defining method for Q3
-	static void printConditionally(List<Person> people, Condition condition) {
-		people.forEach(person->{if(condition.test(person)) System.out.println(person);});
+	static void printConditionally(List<Person> people, Predicate<Person> predicate) {
+		people.forEach(person->{if(predicate.test(person)) System.out.println(person);});
 	}
-}
-
-@FunctionalInterface
-interface Condition {
-	boolean test(Person p);
 }
 
