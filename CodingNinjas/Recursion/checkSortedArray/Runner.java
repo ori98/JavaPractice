@@ -26,6 +26,14 @@ public class Runner{
 
 		else
 			System.out.println("Array is not sorted");
+		
+		// checking using the checkSortedBetter method
+		System.out.println("Using check Sorted Better");
 
+		if(Solution.checkSortedBetter(arr, 0))
+			System.out.println("Array is sorted better");
+
+		else
+			System.out.println("Array is not sorted better");
 	}
 }

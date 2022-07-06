@@ -28,4 +28,23 @@ public class Solution{
 		return checkSorted;
 	} 
 
+	public static boolean checkSortedBetter(int[] arr, int si){
+		
+		// using the base case to end the array
+		// base case: when the starting index exceeds the length of array
+		// meaning that the whole array has been checked
+		
+		if(si >= arr.length - 1)
+			return true;
+
+		// base case where the elements are not sorted
+		// ie the elements at starting index and next element are not soretd
+		if(arr[si] > arr[si + 1])
+			return false;
+
+		// updation and recursive call
+		return checkSortedBetter(arr, si+1);
+	}
+
+
 }
